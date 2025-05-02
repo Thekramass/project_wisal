@@ -1,0 +1,30 @@
+body{
+    background-image: url(../img/one.jpg);
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.btns button {
+    border: none;
+    padding: 12px 25px;
+    background-color: white;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+    outline: none;
+}
+
+.btns button:hover{
+    color: #fff;
+    background-color: #1A6C9E;
+}
+
+.btns button.selected {
+    background-color: #1A6C9E;
+    color: #fff;
+}
+ 

@@ -1,0 +1,105 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    font-family: 'IBM Plex Sans Arabic',"Open Sans", sans-serif;
+    background-image: url(../img/two.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+/* خاص بالهيدر */
+.header { 
+  background-color: rgb(255 255 255 / 40%);
+  box-shadow: 0 0 10px 0 rgb(255 255 255 / 20%);
+}
+.header.sticky{
+  position: relative;
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(6px);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    position: absolute;;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+} 
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: black;
+  }
+  
+p {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .otp-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .otp-box input {
+    width: 45px;
+    height: 50px;
+    font-size: 22px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .otp-box input:focus {
+    border-color: #1e88e5;
+    outline: none;
+  }
+  
+  button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #1e88e5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1669bb;
+  }
+  
+  #result {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  .resend-btn {
+    background-color: transparent;
+    color: #1e88e5;
+    border: none;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .resend-btn:hover {
+    color: #0d47a1;
+  }
+  

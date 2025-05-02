@@ -1,0 +1,302 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+  font-family: 'IBM Plex Sans Arabic',"Open Sans", sans-serif;
+  background-image: url(../img/login11.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+   /* padding: 100px; */
+  /* padding-bottom: 40px; */
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* خاص بالهيدر */
+.header { 
+  background-color: rgb(255 255 255 / 40%);
+  box-shadow: 0 0 10px 0 rgb(255 255 255 / 20%);
+}
+
+.header.sticky{
+  position: relative;
+}
+.container {
+  background-color: rgb(255 255 255 / 40%);
+  width: 480px;
+  /* height: 600px; */
+  padding: 35px 50px;
+  border-radius: 30px;
+  /* position: absolute; */
+  margin: 40px 50px;
+  /* right: 80px;
+  top: 30px; */
+}
+.container .con-logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 28px;
+}
+.container .con-logo .logo img {
+    width: 60px;
+    height: 60px;
+}
+.container .con-logo .text h2{
+    color: #1A6C9E;
+}
+.container .con-logo .text p:nth-child(2){
+    color: #555555;
+    font-weight: bold;
+}
+.container .con-text p:first-child{
+    color: #1A6C9E;
+    font-weight: bold;
+}
+.container .con-text p:last-child{
+    font-size: 22px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.container-form form input{
+    outline: none;
+    border: none;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 6px;
+}
+.container-form form input::placeholder{
+    color: #888;
+}
+.container-form form input:focus{
+    border: #1A6C9E solid 1px;
+}
+
+.container-form form a.forget{
+    display: block;
+    /* text-decoration: none; */
+    margin-top: 20px;
+    color: black;
+}
+.container-form form input[type = "submit"]{
+    background-color: #1A6C9E;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.container-form form input[type = "submit"]:hover{
+    background-color: #155a96;
+}
+.container-form form .other-way{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 8px 0;
+}
+.container-form form .other-way p {
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+.container-form form .other-way p::before,
+.container-form form .other-way p::after{
+    content: "";
+    position: absolute;
+    width: 112px;
+    height: 1px;
+    top: 50%;
+    background-color: #555555;
+}
+.container-form form .other-way p::before{
+    right: 0;
+}
+.container-form form .other-way p::after{
+   left: 0;
+}
+.container-form div.new-acount{
+    text-align: center;
+}
+.container-form div.new-acount a{
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+/* ====== Modal Style ====== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0 0 0 / 50%);
+    font-family: 'IBM Plex Sans Arabic',"Open Sans", sans-serif;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 400px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .modal-content h3 {
+    margin-bottom: 10px;
+    color: #1A6C9E;
+  }
+  
+  .modal-content p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  .modal-button {
+    background-color: #1A6C9E;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .modal-button:hover {
+    background-color: #155a96;
+  }
+  
+  .close {
+    color: #aaa;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+/* ===== Toast  For Forget Password Style ===== */
+.toast-pass {
+    visibility: hidden;
+    min-width: 320px;
+    background-color: #1A6C9E;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 14px 20px;
+    position: fixed; 
+    top: 20px; 
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 1000;
+    font-size: 15px;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: all 0.5s ease-in-out; 
+}
+   
+.toast-pass.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Responsive Design  */
+@media (max-width: 991px) {
+    .container {
+      width: 70%;
+      padding: 25px;
+      margin-right: 50%;
+      transform: translateX(50%);
+    }
+  
+    .container .con-logo .logo img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .container .con-text p:last-child {
+      font-size: 18px;
+    }
+  
+    .modal-content {
+      width: 90%;
+    }
+  }
+  
+ @media (max-width: 600px) { 
+    .container {
+      width: 95%;
+      padding: 20px;
+      margin-right: 50%;
+      transform: translateX(50%);
+      top: 20px;
+    }
+  
+    .container .con-logo {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .container .con-logo .text h2 {
+      font-size: 22px;
+    }
+  
+    .container .con-text p:first-child,
+    .container .con-text p:last-child {
+      text-align: center;
+    }
+  
+    .container-form form input,
+    .container-form form input[type="submit"],
+    .modal-input {
+      font-size: 14px;
+      padding: 12px;
+    }
+  
+    .container-form form .other-way p::before,
+    .container-form form .other-way p::after {
+      width: 80px;
+    }
+  
+    .container-form form .other-way p {
+      font-size: 13px;
+    }
+  
+    .toast-pass {
+      min-width: 260px;
+      font-size: 13px;
+    }
+  } 
+  
+
+
+  
