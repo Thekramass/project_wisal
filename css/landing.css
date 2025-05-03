@@ -486,9 +486,9 @@ ul{
 /* لتنسيق الزرين الثابتين */
 .floating-buttons {
     position: fixed;
-    top: 20%;
+    top: 50%;
     /* right: 15px; */
-    /* transform: translateY(-50%); */
+    transform: translateY(-50%);
     /* display: flex; */
     /* flex-direction: column; */
     /* gap: 12px; */
@@ -562,28 +562,9 @@ ul{
     }
   }
   
-/* 
-@media (max-width: 768px) {
-   
+/* سلايدر لكيف يعمل الموقع  */
 
-    ul.links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 10px;
-        padding: 10px;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        z-index: 100;
-    }
 
-    ul.links.show {
-        display: flex;
-    }
-
-} */
 
 /* قائمة الجوال */
 @media (max-width: 768px) {

@@ -63,36 +63,6 @@ function handleRegister(event) {
   // نحفظ رمز التحقق مؤقتًا للمقارنة لاحقًا
   localStorage.setItem("verificationCode", verificationCode); // هذا هو الكود الذي أرسلته بالإيميل
 
-  // للحذف
-  // توليد رمز تحقق
-  // const verificationCode = Math.floor(100000 + Math.random() * 900000);
-
-  // // إرسال الرمز عبر EmailJS (نفس الخطوات الموجودة في forgetpass.js)
-  // const serviceID = "service_jmyv13t";
-  // const templateID = "template_quo84h7";
-  // const publicKey = "7GPfxT89aP2gQETza";
-
-  // const templateParams = {
-  //   to_email: email,
-  //   code: verificationCode,
-  // };
-
-  // emailjs.send(serviceID, templateID, templateParams, publicKey)
-  //   .then(() => {
-  //     // التخزين في localStorage
-  //     localStorage.setItem("tempEmail", email);
-  //     localStorage.setItem("userType", selectedUserType);
-  //     localStorage.setItem("resetMode", "false");
-  //     localStorage.setItem("verificationCode", verificationCode);
-
-  //     // التوجيه
-  //     window.location.href = "sure.htm";
-  //   })
-  //   .catch((error) => {
-  //     console.error("فشل في إرسال البريد:", error);
-  //     showToast("حدث خطأ أثناء إرسال رمز التحقق.");
-  //   });
-
   // التوجيه لصفحة التحقق sure.html
   window.location.href = "sure.htm";
 }
@@ -131,33 +101,6 @@ function handleCredentialResponse(response) {
   localStorage.setItem("userType", selectedUserType);
   localStorage.setItem("resetMode", "false");
 
-  // للحذف
-
-  // localStorage.setItem("resetMode", "false");
-
-  // // توليد رمز تحقق
-  // const verificationCode = Math.floor(100000 + Math.random() * 900000);
-
-  // // إرسال الرمز عبر EmailJS
-  // const serviceID = "service_jmyv13t";
-  // const templateID = "template_quo84h7";
-  // const publicKey = "7GPfxT89aP2gQETza";
-
-  // const templateParams = {
-  //   to_email: data.email,
-  //   message: verificationCode,
-  // };
-
-  // emailjs.send(serviceID, templateID, templateParams, publicKey)
-  //   .then(() => {
-  //     localStorage.setItem("tempEmail", data.email);
-  //     localStorage.setItem("verificationCode", verificationCode);
-  //     window.location.href = "sure.htm";
-  //   })
-  //   .catch((error) => {
-  //     console.error("فشل في إرسال البريد:", error);
-  //     showToast("حدث خطأ أثناء إرسال رمز التحقق.");
-  //   });
   const verificationCode = Math.floor(100000 + Math.random() * 900000);
   localStorage.setItem("verificationCode", verificationCode);
 
@@ -178,12 +121,3 @@ function showToast(message) {
     toast.classList.remove("show");
   }, 4000);
 }
-
-// localStorage.setItem("tempEmail", email);
-// localStorage.setItem("verificationCode", generatedCode);
-// localStorage.setItem("userType", selectedUserType); // حسب الزر اللي اختاره
-// localStorage.removeItem("resetMode");
-// // حفظ البريد الإلكتروني في localStorage لاستخدامه لاحقًا في صفحة التحقق
-// localStorage.setItem("userEmail", email);
-// localStorage.setItem("userName", name);
-// localStorage.setItem("userType", selectedUserType);
