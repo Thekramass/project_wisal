@@ -1,3 +1,41 @@
+<?php
+session_start();
+
+$loginMessage = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = htmlspecialchars($_POST['email']);
+    $password = $_POST['password'];
+
+    $conn = new mysqli('localhost', 'root', '', 'wesal');
+    if ($conn->connect_error) {
+        die("فشل الاتصال بقاعدة البيانات: " . $conn->connect_error);
+    }
+
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['username'] = $user['username'];
+            $loginMessage = "<p style='color: green;'>مرحبًا " . htmlspecialchars($user['username']) . "! تم تسجيل الدخول بنجاح.</p>";
+            // header("Location: dashboard.php"); exit;
+        } else {
+            $loginMessage = "<p style='color: red;'>كلمة المرور غير صحيحة.</p>";
+        }
+    } else {
+        $loginMessage = "<p style='color: red;'>البريد الإلكتروني غير مسجل.</p>";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -63,7 +101,11 @@
             <p>سعيدين بتواجدك مرة اخرى هنا!</p>
         </div>
         <div class="container-form">
-            <form action="" target="_self">
+        <?php if (!empty($loginMessage)) echo $loginMessage; ?>
+
+
+            <form action="" method="POST" target="_self">
+
                 <input type="email" id="email" name="email" placeholder="البريد الالكتروني">
                 <input type="password" name="password" id="password" placeholder="كلمة المرور">
                 <a class="forget" id="forget" href="">هل نسيت كلمة المرور؟</a>
