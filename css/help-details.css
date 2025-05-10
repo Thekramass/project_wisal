@@ -1,0 +1,364 @@
+.details-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.details-header {
+  position: relative;
+}
+
+.details-header img {
+  width: 100%;
+  /* height: 350px; */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.details-container .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.title i {
+  background-color: #333;
+  color: #fff;
+  font-size: 15px;
+  padding: 7px 8px;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  z-index: 1;
+  text-align: center;
+  width: 100px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.badge.urgent {
+  background-color: #dc3545;
+}
+.badge.new {
+  background-color: #62A3DB;
+}
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.title-row h2 {
+  font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+.meta {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.total {
+  color: #1A6C9E;
+  font-weight: 600;
+  font-size: 17px;
+  margin: 0;
+}
+
+.date {
+  color: #222;
+}
+
+.progress-container {
+  margin: 20px 0;
+}
+.description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333 !important;
+  margin: 20px auto 40px !important;
+}
+p.text {
+  color: #1A6C9E;
+  font-weight: 600;
+}
+
+/* تفاصيل اضافية  */
+.extra-details {
+  margin-top: 30px;
+}
+
+.toggle-btn {
+  background-color: #1A6C9E;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#arrow {
+  transition: transform 0.3s ease;
+}
+
+.extra-content {
+  display: none;
+  margin-top: 15px;
+  background-color: #f6f8fa;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+.extra-content ul {
+  padding: 0;
+  list-style: none;
+}
+
+.extra-content li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #333;
+}
+
+
+.attachments, .donors {
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.attachment {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f1f4f9;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.attachment h3 {
+  font-size: 20px;
+  color: #1A6C9E;
+  margin-bottom: 10px;
+}
+
+.attachment .note {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.proof-files {
+  list-style: none;
+  padding: 0;
+}
+
+.proof-files li {
+  margin-bottom: 10px;
+}
+
+.proof-files a {
+  text-decoration: none;
+  color: #1A6C9E;
+  font-weight: bold;
+}
+
+.proof-files a:hover {
+  text-decoration: underline;
+}
+
+.btn-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.btn-text p {
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  /* margin-top: 30px; */
+}
+.actions button {
+  padding: 10px 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+.btn-donate {
+  background-color: #1A6C9E;
+  color: white;
+}
+.share-btn {
+  background-color: #ddd;
+
+}
+
+.share-section {
+  display: flex;
+  margin-top: 24px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #999;
+  padding-top: 20px;
+}
+
+.share-title {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.share-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.share-icons .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.icon.facebook {
+  background-color: #1877F2;
+}
+
+.icon.whatsapp {
+  background-color: #25D366;
+}
+
+.icon.x {
+  background-color: black;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.donors {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.donors strong {
+  font-size: 20px;
+  color: #333;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.donors ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.donors li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.donors li span {
+  flex: 1;
+  text-align: center;
+}
+
+.donors li span:last-child {
+  color: #666;
+  font-size: 14px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 10px;
+}
+
+/* للشاشات الصغيرة  */
+@media (max-width : 600px) {
+  .total {
+    font-size: 13px;
+    text-align: center;
+  }
+  .title-row h2 {
+    font-size: 23px;
+  }
+  .btn-text {
+    flex-direction: column;
+  }
+  .btn-text  p{
+    margin-bottom: 20px;
+  }
+  .share-section{
+    flex-direction: column;
+  }
+  .share-icons .icon{
+    width: 30px;
+    height: 30px;
+    font-size: 17px;
+  }
+  .container .header-don{
+    flex-direction: column;
+  }
+  .case-details {
+    flex-direction: column;
+  }
+  .case-details > div {
+    text-align: center;
+}
+.progress-bar {
+  width: 100%;
+}
+.status-badge {
+  margin-top: 10px;
+}
+.note {
+  font-size: 15px;
+}
+
+.donate-btn {
+  font: 15px;
+}
+}

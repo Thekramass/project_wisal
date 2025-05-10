@@ -9,11 +9,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-let create = document.querySelector(".create");
-let login = document.querySelector(".login");
-create.onclick = () => window.open("../sign-up.htm", "_self");
-login.onclick = () => window.open("../login.htm", "_self");
-
 const links = document.querySelectorAll(".links li a");
 const currentPage = window.location.pathname;
 links.forEach((link) => {
@@ -38,3 +33,9 @@ document.addEventListener("click", (e) => {
     linkss.classList.remove("show");
   }
 });
+
+let create = document.querySelector(".create");
+let login = document.querySelector(".login");
+
+create.onclick = () => window.open("../sign-up.htm", "_self");
+login.onclick = () => window.open("../login.htm", "_self");

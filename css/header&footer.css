@@ -103,6 +103,13 @@ a.active{
     color: white;
     border: #1A6C9E 1px solid;
 }
+.log-btn .logout{
+    margin-left: 5px;
+    background-color: #1A6C9E;
+    color: white;
+    border: #1A6C9E 1px solid;
+}
+
 .log-btn .login{
     background-color: transparent;
     border: #1A6C9E 1px solid;

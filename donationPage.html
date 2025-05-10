@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> صقحة الدفع </title>
+  <!-- Normalize  File  -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Open+Sans:wdth,wght@75..100,300..800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="css/header&footer.css">
+  <link rel="stylesheet" href="css/avialableHelp.css">
+  <link rel="stylesheet" href="css/help-details.css">
+  <link rel="stylesheet" href="css/donationPage.css" />
+</head>
+<body>
+  <div class="header">
+    <a class="logo" href="landing.htm">
+        <img src="img/Group.png" alt="logo">
+        <h3>وصال</h3>
+    </a>
+    <ul class="links">
+            <li><a href="landing.htm">الرئيسية</a></li>
+            <li><a href="availabeHelp.htm">المساعدات المتاحة</a></li>
+            <li><a href="how.htm">كيف يعمل الموقع</a></li>
+            <li><a href="personalPage.htm">حسابي </a></li>
+            <li><a href="us.html">من نحن؟</a></li>
+            <li><a href="contact-us.htm">تواصل معنا</a></li>
+    </ul>
+    <div class="log-btn">
+        <button id="logout" class="logout">تسجيل الخروج</button>
+    </div>
+     <!-- زر القائمة (☰) -->
+     <div class="menu-toggle">&#9776;</div>
+</div>    
+  <div class="container">
+    <div class="title">
+      <i class="fa-solid fa-arrow-right" onclick="window.history.back()" ></i>
+       الدفع
+    </div>
+    <div class="header-don">
+      <div class="case-details">
+        <img src="img/Photo (1).png" alt="صورة الحالة">
+        <div>
+          <div class="case-title">علاج طارئ لطفلة مريضة</div>
+          <div class="progress-bar">
+            <div class="progress" style="width: 50%;"></div>
+          </div>
+          <div class="collected">$50 تم جمعه من أصل $100</div>
+        </div>
+      </div>
+      <div class="status-badge">حالة جديدة</div>
+    </div>
+
+    <div class="donation-amount">
+      <label>اختر المبلغ الذي ترغب في التبرع به، مهما كان بسيطًا، سيصنع فرقًا كبيرًا!</label>
+      <input type="number" placeholder="$">
+    </div>
+
+    <div class="payment-methods">
+      <h3>طرق الدفع المتاحة</h3>
+      <div class="payment-option" data-method="visa">
+        <img src="img/visa-logo-png-2020.png" alt="Visa">
+        <span>Visa</span>
+      </div>
+      <div class="payment-option" data-method="mastercard">
+        <img src="img/Mastercard-logo.png" alt="Mastercard">
+        <span>Mastercard</span>
+      </div>
+      <div class="payment-option" data-method="bank">
+        <img src="img/icons8-bank-50.png" alt="تحويل بنكي">
+        <span>تحويل بنكي</span>
+      </div>
+      <div class="payment-option" data-method="paypal">
+        <img src="img/paypal_PNG10.png" alt="paypal ">
+        <span>Paypal </span>
+      </div>
+      <div class="payment-option" data-method="cash">
+        <img src="img/icons8-money-48.png" alt="نقدًا">
+        <span>نقدًا</span>
+      </div>
+    </div>
+
+    <div class="payment-summary">
+      <h3>تفاصيل الدفع</h3>
+      <div class="row"><span>تبرعك</span><span>$<span id="donation-value">0</span></span></div>
+      <div class="row total"><span>إجمالي الفاتورة</span><span>$<span id="total-value">0</span></span></div>
+    </div>
+
+    <div class="donate-final">
+    <p class="note">نضمن لك أن تبرعك يصل بأمان وشفافية تامة.</p>
+    <button class="donate-btn" id="donate-btn">تبرع الآن</button>   
+    </div>
+<!-- إضافة تلميحات في حالة لم يتم تحديد أي طريقة دفع أو مبلغ تبرع -->
+<div id="donation-message" class="donation-message"></div>
+
+  </div>
+  <div class="footer">
+    <div class="text">
+        <div class="logo">
+            <img src="img/Group.png" alt="logo">
+            <h4>وصال</h4>
+        </div>
+        <div class="content">
+            منصة إنسانية تهدف لربط المتبرعين بالعائلات المحتاجة بطريقة شفافة، سهلة، وآمنة.<br> نعمل على تسهيل إيصال التبرعات بمختلف أشكالها لمن هم في أمسّ الحاجة، ونؤمن أن كل مساعدة، مهما كانت بسيطة، قادرة على صناعة فرق حقيقي.
+        </div>
+    </div>
+    <div class="links">
+        <div class="box">
+            <h4>الروابط السريعة</h4>
+            <a href="landing.htm">الرئيسية</a>
+            <a href="availabe.htm">المساعدات المتاحة</a>
+            <a href="how.htm">كيف يعمل الموقع</a>
+            <a href="giveHelp.htm">تقديم المساعدة</a>
+            <a href="reqHelp.htm">طلب المساعدة</a>
+            <a href="us.html">من نحن؟</a>
+        </div>
+        <div class="box">
+            <h4>الشروط والسياسات</h4>
+            <a href="">الشروط والأحكام</a>
+            <a href="">سياسية الخصوصية</a>
+            <a href="">سياسية ملفات تعريف الارتباط</a>
+            <a href="commonQues.htm">الأسئلة الشائعة</a>
+        </div>
+        <div class="box">
+            <h4>مواقع التواصل الاجتماعي</h4>
+            <div class="social">
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        جميع الحقوق محفوظة لمنصة وصال &copy; 2025
+    </div>
+</div>
+  <script src="js/header.js"></script>
+  <script src="js/donationPage.js"></script>
+</body>
+</html>
+    <!-- <div class="payment-methods">
+      <h3>طرق الدفع المتاحة</h3>
+    
+      <label class="payment-option">
+        <input type="radio" name="payment" value="card">
+        <img src="icons/card.png" alt="بطاقة بنكية">
+        <span>بطاقة بنكية</span>
+      </label>
+    
+      <label class="payment-option">
+        <input type="radio" name="payment" value="paypal">
+        <img src="icons/paypal.png" alt="PayPal">
+        <span>PayPal</span>
+      </label>
+    
+      <label class="payment-option">
+        <input type="radio" name="payment" value="bank">
+        <img src="icons/bank.png" alt="تحويل بنكي">
+        <span>تحويل بنكي</span>
+      </label>
+    </div> -->
+    <!--1-->

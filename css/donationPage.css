@@ -1,0 +1,236 @@
+.status-badge.urgent {
+  background-color: #dc3545;
+}
+.status-badge.new {
+  background-color: #62A3DB;
+}
+.container {
+    max-width: 80%;
+    margin: 40px auto;
+    box-shadow: 0 0 6px 0px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 40px;
+  }
+  
+  .status-badge {
+    background-color: #1A6C9E;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+.container  .header-don {
+    display: flex;
+    align-items: center;
+    /* gap: 100px; */
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .case-details {
+    flex: 1;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .case-details img {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .case-details > div {
+    flex: 1;
+}
+  .case-title {
+    font-weight: bold;
+  }
+  
+  .progress-bar {
+    background-color: #eee;
+    height: 8px;
+    border-radius: 10px;
+    width: 70%;
+    margin: 15px 0;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #1A6C9E;
+  }
+  
+  .collected {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .donation-amount {
+    background: #f6f6f6;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  
+  .donation-amount label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .donation-amount input {
+    width: 40%;
+    padding: 10px;
+    font-size: 17px;
+    outline: none;
+  }
+  
+/* 1 */
+
+   .payment-methods {
+    margin-top: 30px;
+  }
+  
+  .payment-methods h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+}
+  /* إضافة تأثير hover لخيارات الدفع */
+.payment-option:hover {
+    border-color: #1A6C9E;
+    background-color: #f0f4ff;
+    transform: scale(1.05); /* تكبير بسيط عند المرور */
+    transition: transform 0.3s ease-in-out;
+}
+  .payment-option img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .payment-option span {
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+  }
+    .payment-option.selected {
+        border-color: #1A6C9E;    
+        background-color: #f0f4ff;
+  }
+  .donation-message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .donation-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .donation-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+/*  */
+
+  .payment-summary {
+    background-color: #f6f6f6;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .payment-summary h3 {
+    color: #1A6C9E;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+  .payment-summary .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .row span {
+    font-weight: 600;
+}
+  .payment-summary .total {
+    /* font-weight: bold; */
+  }
+  .donate-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.donate-btn {
+    background-color: #1A6C9E;
+    color: white;
+    padding: 12px 20px;
+    width: 40%;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.donate-btn {
+    background-color: #1A6C9E;
+    color: white;
+    padding: 12px 20px;
+    width: 40%;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.donate-btn:hover {
+    background-color: #155d8a; /* تغيير اللون عند المرور بالماوس */
+}
+  .note {
+    text-align: center;
+    margin-top: 20px;
+    color: #222;
+    font-size: 17px;
+    font-weight: 500;
+    max-width: 300px;
+}
+
+
+@media (max-width: 600px) {
+  .progress-bar {
+      width: 100%;
+  }
+}
+  

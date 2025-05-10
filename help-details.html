@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> تفاصيل المساعدة </title>
+    <!-- Normalize  File  -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Open+Sans:wdth,wght@75..100,300..800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/header&footer.css">
+    <link rel="stylesheet" href="css/avialableHelp.css">
+    <link rel="stylesheet" href="css/help-details.css">    
+</head>
+<body>
+  <div class="details-container">
+    <div class="title">
+        <i class="fa-solid fa-arrow-right" onclick="window.location.href='availabeHelp.htm'" ></i>
+        تفاصيل الحالة
+    </div>
+    <div class="details-header">
+      <span class="badge urgent" id="help-badge"></span>
+      <img id="detail-img" src="" alt="صورة الحالة">
+    </div>
+
+    <div class="title-row">
+      <h2 id="detail-title">عنوان الحالة</h2>
+      <div class="meta total" id="detail-progress-text"></div>
+    </div>
+
+    <div class="meta" id="detail-category">(فئة المساعدة)</div>
+    <div class="meta date" id="detail-date"></div>
+
+    <div class="progress-bar">
+      <div class="progress-bar-fill" id="detail-progress-bar"></div>
+    </div>
+
+    <p class="description" id="detail-desc"></p>
+
+    <p class="text">كل مساهمة، مهما كانت بسيطة، تقرّب رُبى من الشفاء وتمنحها فرصة لحياة أفضل.</p>
+    <!-- تفاصيل اضافية  -->
+    <div class="extra-details">
+        <button class="toggle-btn" onclick="toggleExtraDetails()">
+          تفاصيل إضافية <span id="arrow">▼</span>
+        </button>
+        <div class="extra-content" id="extra-content">
+          <ul id="extra-list"></ul>
+        </div>
+    </div>
+      
+    <div class="attachment">
+        <h3>ملفات الإثبات</h3>
+        <p class="note">تم إرفاق المستندات التالية من صاحب الحالة لتأكيد احتياجه:</p>
+        <ul class="proof-files">
+          <!-- سيتم ملؤها ديناميكيًا لاحقًا -->
+          <!-- <li><a href="#" target="_blank">تقرير طبي - حالة طارئة.pdf</a></li>
+          <li><a href="#" target="_blank">صورة وصفة دواء.jpg</a></li> -->
+        </ul>
+    </div>
+      
+    <div class="btn-text">
+        <p> ساهم الآن، فكل لحظة تأخير قد تُحدث فرقًا كبيرًا. </p>
+        <div class="actions">
+          <button class="btn-donate">تبرع الآن</button>
+        </div>
+    </div>
+    <div class="share-section">
+                <p class="share-title">أو يمكنك أن تشارك الحالة مع أصدقائك</p>
+                <div class="share-icons">
+                  <a href="#" class="icon facebook" title="شارك على فيسبوك" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="icon whatsapp" title="شارك على واتساب" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  <a href="#" class="icon x" title="شارك على X" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                </div>
+    </div>   
+    <div class="donors">
+        <strong>آخر المساهمين:</strong>
+        <ul id="donors-list">
+          <!-- سيتم تعبئته ديناميكياً -->
+        </ul>
+    </div>
+      
+  </div>
+
+<script src="js/help-details.js"></script>
+</body>
+</html>
+
+<!-- اه ياريت + بدي امثلة تانية لكارد كاملة سواء مساعدات غذائية او ملابس او صحية + المساهمين يكونو تلقائي ولا هاي مش وظيفة الفرونت  -->
+
+
+            <!-- <button class="share-btn" onclick="shareHelp()">مشاركة</button> -->
