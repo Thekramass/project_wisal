@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -64,4 +67,46 @@
   <script src="js/sure.js"></script>
 </body>
 </html>
+<?php
+
+$loginMessage = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = htmlspecialchars($_POST['email']);  
+
+    // الاتصال بقاعدة البيانات
+    $conn = new mysqli('localhost', 'root', '', 'wesal');
+    
+    if ($conn->connect_error) {
+        die("فشل الاتصال بقاعدة البيانات: " . $conn->connect_error);
+    }
+
+    // استعلام للتحقق من وجود المستخدم باستخدام البريد الإلكتروني
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // التحقق إذا كان البريد الإلكتروني موجودًا في قاعدة البيانات
+    if ($result->num_rows > 0) {
+        // إذا كان البريد الإلكتروني موجودًا
+        $user = $result->fetch_assoc();  // استرجاع بيانات المستخدم
+        $loginMessage = "<p style='color: green;'>تم العثور على البريد الإلكتروني في قاعدة البيانات.</p>";
+        
+        // ارسال الرسالة إلى الـ front-end لتستكمل عملية ارسال OTP باستخدام EmailJS
+        $_SESSION['email'] = $email;  // تخزين البريد الإلكتروني في الجلسة لاستخدامه لاحقًا
+        
+    } else {
+        // إذا كان البريد الإلكتروني غير موجود في قاعدة البيانات
+        $loginMessage = "<p style='color: red;'>البريد الإلكتروني غير مسجل.</p>";
+    }
+
+    // اغلاق الاستعلام والاتصال بقاعدة البيانات
+    $stmt->close();
+    $conn->close();
+}
+
+?>
+
+
+
 
