@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+session_start();// بدء الجلسة
+
+?>
+<!DOCTYPE html> 
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -64,17 +68,22 @@
             <p>يسرنا وجودك معنا هنا في منصة وصال!</p>
         </div>
         <div class="btns">
-            <button id="donor">متبرع</button>
-            <button id="needy">محتاج</button>
-            <button id="admin">إداري</button>
+        <form action="" method="POST">
+        <button type="button" id="donor" value="donor">متبرع</button>
+    <button type="button" id="needy" value="needy">محتاج</button>
+    <button type="button" id="admin" value="admin">إداري</button>
+</form>
         </div>
         
+
         <div class="container-form">
-            <form id="signupForm" action="" target="_blank" onsubmit="handleRegister(event)">
+        <?php if (!empty($message)) echo $message; ?>
+        <form id="signupForm" action="" method="POST" onsubmit="handleRegister(event)">
                 <input type="text" id="name" name="name" placeholder="الاسم كاملا" required>
                 <input type="email" id="email" name="email" placeholder="البريد الالكتروني" required>
                 <input type="password" name="password" id="password" placeholder="كلمة المرور" required>
-                <input type="submit" value="إنشاء الحساب ">
+                <input type="hidden" name="role" id="role">
+
             <div class="other-way">
                 <p>أو تسجيل الدخول باستخدام</p>
                 <div id="google-button-container"></div>
@@ -84,9 +93,62 @@
         </div>
     </div>
 
+    <script>
+        document.getElementById("donor").onclick = () => {
+            document.getElementById("role").value = "donor";
+        };
+        document.getElementById("needy").onclick = () => {
+            document.getElementById("role").value = "needy";
+        };
+        document.getElementById("admin").onclick = () => {
+            document.getElementById("role").value = "admin";
+        };
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script> 
     <script src="js/sign-up.js"></script>
     <script src="js/header.js"></script>
 </body>
 </html>
- 
+<?php
+$message='';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['role'])) {
+    $username = htmlspecialchars($_POST['name']);
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // تشفير كلمة المرور
+    $role = htmlspecialchars($_POST['role']); 
+
+    if (!$email) {
+        $message = "<p style='color: red;'>البريد الإلكتروني غير صالح.</p>";
+    } else {
+    $conn = new mysqli('localhost', 'root', '', 'wesal');
+    if ($conn->connect_error) {
+        die("فشل الاتصال بقاعدة البيانات: " . $conn->connect_error);
+    }
+
+    // التأكد إن كان المستخدم موجودًا بالفعل
+    $check = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $check->bind_param("s", $email);
+    $check->execute();
+    $result = $check->get_result();
+
+    if ($result->num_rows > 0) {
+        echo "<p style='color: red;'>البريد الإلكتروني مستخدم مسبقًا.</p>";
+    } else {
+        // إدخال المستخدم الجديد
+        $stmt = $conn->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?,  ?)");
+        $stmt->bind_param("ssss", $username, $email, $password,$role);
+        if ($stmt->execute()) {
+            $message= "<p style='color: green;'>تم إنشاء الحساب بنجاح!</p>";
+            $_SESSION['username'] = $username;
+        } else {
+            $message= "<p style='color: red;'>حدث خطأ أثناء إنشاء الحساب.</p>";
+        }
+        $stmt->close();
+    }
+
+    $check->close();
+    $conn->close();
+}
+?>
