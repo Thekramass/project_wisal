@@ -37,3 +37,19 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".icon.whatsapp").href = whatsappLink;
   document.querySelector(".icon.x").href = xLink;
 });
+
+// يتغير تلقائيا الفقرة الثالثة التي تحت الصورة
+// مثال على نوع المساعدة (ممكن تيجي من localStorage أو من API أو URL parameter)
+try {
+  const storedData = localStorage.getItem("cardsData");
+  cardData = JSON.parse(storedData);
+  if (!cardData) throw new Error();
+} catch (e) {
+  alert("حدث خطأ أثناء تحميل البيانات.");
+  window.location.href = "availabeHelp.htm";
+}
+
+// نحط الجملة في الصفحة
+document.querySelector(".detail-category").textContent =
+  cardData["desc-after-pay"] ||
+  "شكرًا لتبرعك الكريم، لقد كان له أثر عظيم في حياة المحتاجين.";
